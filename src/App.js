@@ -1,6 +1,5 @@
 import './App.css';
-import picture from './mcr.jpg'
-import song from './Disenchanted.mp3'
+import song from './Bohemian Rhapsody.mp3'
 import data from './single-sample.js'
 // import { useEffect } from 'react';
 
@@ -52,54 +51,57 @@ function App() {
         </div>
         <hr></hr>
 
-        {/* <div className="row mb-3 mt-3 justify-content-center text-center">
-          <div className="col-md-4 mb-4 mt-4">
+        <div className="row mb-3 mt-3 justify-content-center text-center">
+          <div className="col-md-5 mb-4 mt-4">
             <div className="card border-light">
-                <img src={picture} width="50" className="card-img-top" alt="Front-end"/>
+                <img src={data.album.images[0].url} width="50" className="card-img-top" alt="Front-end"/>
               <div className="card-body">
-                <h3 className="card-title text-dark"><i className="bi bi-music-note"></i>Disenchanted</h3>
-                <p className="card-text text-muted" id="song-title">My Chemical Romance</p>
+                <h3 className="card-title text-dark"><i className="bi bi-music-note"></i>{data.name}</h3>
+                <p className="card-text text-muted" id="song-title">{data.artists[0].name}</p>
                 <p className="garis-pembatas"></p>
-                <p className="card-text text-muted" id="song-album">Album : The Black Parade</p>
+                <p className="card-text text-muted" id="song-album">{data.album.name}</p>
               
-                <button className="btn btn-dark btn-lg mb-3" role="button" type="button" href="#" id="info">
-                  Select
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" className="bi bi-info-lg" viewBox="0 0 16 16" id="svg">
-                    <path d="m9.708 6.075-3.024.379-.108.502.595.108c.387.093.464.232.38.619l-.975 4.577c-.255 1.183.14 1.74 1.067 1.74.72 0 1.554-.332 1.933-.789l.116-.549c-.263.232-.65.325-.905.325-.363 0-.494-.255-.402-.704l1.323-6.208Zm.091-2.755a1.32 1.32 0 1 1-2.64 0 1.32 1.32 0 0 1 2.64 0Z"/>
-                  </svg>
+                <a href={data.uri}>
+                <button className="btn btn-dark btn-lg mb-3" type="button" id="info">
+                  Select 
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" className="bi bi-caret-right-fill" viewBox="0 0 16 16" id="svg">
+  <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+</svg>
                   </button>
+                  </a>
                   <br></br>
               </div>
             </div>
           </div>
-        </div> */}
+        </div>
 
-        <div className="card mb-3 mt-3 justify-content-center text-center">
+        {/* <div className="card mb-3 mt-3 justify-content-center text-center">
           <div className="row g-0">
             <div className="col-md-4 mb-4 mt-4">
-            <img src={picture} width="50" className="card-img-top rounded-start" alt="Front-end"/>
+            <img src={data.album.images[0].url} width="50" className="card-img-top rounded-start" alt="Front-end"/>
             </div>
             <div className="col-md-8">
               <div className="card-body">
-              <h3 className="card-title text-dark"><i className="bi bi-music-note"></i>Disenchanted</h3>
-                <p className="card-text text-muted" id="song-title">My Chemical Romance</p>
+              <h3 className="card-title text-dark"><i className="bi bi-music-note"></i>{data.name}</h3>
+                <p className="card-text text-muted" id="song-title">{data.artists[0].name}</p>
                 <p className="garis-pembatas"></p>
-                <p className="card-text text-muted" id="song-album">Album : The Black Parade</p>
-
+                <p className="card-text text-muted" id="song-album">{data.album.name}</p>
+                <a href={data.uri}>
                 <button className="btn btn-dark btn-lg mb-3" type="button" href="#" id="info">
                   Select 
                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" className="bi bi-info-lg" viewBox="0 0 16 16" id="svg">
                     <path d="m9.708 6.075-3.024.379-.108.502.595.108c.387.093.464.232.38.619l-.975 4.577c-.255 1.183.14 1.74 1.067 1.74.72 0 1.554-.332 1.933-.789l.116-.549c-.263.232-.65.325-.905.325-.363 0-.494-.255-.402-.704l1.323-6.208Zm.091-2.755a1.32 1.32 0 1 1-2.64 0 1.32 1.32 0 0 1 2.64 0Z"/>
                   </svg>
                   </button>
+                  </a>
                   <br></br>
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
         
 
-        <audio controls  className="col-md-8 col-sm-8 col-lg-8 align-items-center offset-md-3 offset-lg-2 offset-sm-2">
+        <audio controls  className="col-md-8 col-sm-8 col-lg-8 align-items-center offset-md-2 offset-lg-2 offset-sm-2">
             <source src={song} type="audio/mpeg"/>
         </audio>
         <div className="rain">
@@ -116,6 +118,7 @@ function App() {
           <div></div>
         </div>
       </div>
+      
       
 
         </div>
