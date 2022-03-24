@@ -1,0 +1,51 @@
+.card-body {
+  /* color: black; */
+  margin: 5px;
+  padding: 5px;
+}
+
+.card {
+  border-radius: 20px;
+  border: 2px solid whitesmoke;
+  box-shadow: 5px 5px 20px rgba(255, 255, 255, 1);
+  animation: change-boxshadow 4s linear infinite alternate;
+  max-width: 540px;
+  /* z-index: -500px; */
+}
+
+.card-img-top {
+  border-radius: 60px;
+  padding: 30px 30px 20px 30px;
+  width: 100%;
+  height: 100%;
+}
+
+#song-title {
+  margin: 0px 0 5px 0;
+}
+
+#song-album {
+  margin: 0px 0 15px 0;
+}
+
+.garis-pembatas {
+  border-bottom: 1px solid grey;
+}
+
+.btn {
+  border-radius: 10px;
+}
+
+@keyframes change-boxshadow {
+  0% {
+    box-shadow: 5px 5px 20px rgba(255, 255, 255, 1);
+  }
+
+  50% {
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 1);
+  }
+
+  100% {
+    box-shadow: 5px 5px 20px rgba(255, 255, 255, 1);
+  }
+}

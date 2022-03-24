@@ -1,0 +1,23 @@
+h1 {
+  animation: highlight 8s linear infinite alternate;
+}
+
+#baloon {
+  padding-top: 10px;
+  padding-left: 500px;
+}
+
+@keyframes highlight {
+  0% {
+    background-image: linear-gradient(to right, transparent 50%, white 50%);
+    background-size: 200%;
+  }
+
+  100% {
+    background-image: linear-gradient(to right, transparent 50%, white 50%);
+    background-size: 200%;
+    color: black;
+    background-position: -100%;
+    transition: color 1s, background-position 0.5s;
+  }
+}
