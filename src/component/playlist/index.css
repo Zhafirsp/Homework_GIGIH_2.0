@@ -1,7 +1,6 @@
-/* .Playlist {
-  flex-direction: row;
-  display: inline;
-} */
+.playlist {
+  float: left;
+}
 
 .card-body {
   /* color: black; */
@@ -14,7 +13,9 @@
   border: 2px solid whitesmoke;
   box-shadow: 5px 5px 20px rgba(255, 255, 255, 1);
   animation: change-boxshadow 4s linear infinite alternate;
-  max-width: 540px;
+  max-width: 500px;
+  margin-left: 35px;
+  flex: auto;
   /* z-index: -500px; */
 }
 
@@ -44,14 +45,14 @@
 
 @keyframes change-boxshadow {
   0% {
-    box-shadow: 5px 5px 20px rgba(255, 255, 255, 1);
-  }
-
-  50% {
     box-shadow: 5px 5px 20px rgba(0, 0, 0, 1);
   }
 
-  100% {
+  50% {
     box-shadow: 5px 5px 20px rgba(255, 255, 255, 1);
+  }
+
+  100% {
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 1);
   }
 }

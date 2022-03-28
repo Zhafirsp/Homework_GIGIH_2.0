@@ -1,9 +1,12 @@
 import React from "react";
 import Data from "../single-sample.js";
+import data from '../track.js';
 
 const Album = () => {
   return (
-    <p className="card-text text-muted" id="song-album">{Data.album.name}</p>
+        <div>
+        <p className="card-text text-muted" id="song-album">{Data.album.name}</p>
+      </div>
   )
 }
 

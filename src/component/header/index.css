@@ -9,15 +9,15 @@ h1 {
 
 @keyframes highlight {
   0% {
-    background-image: linear-gradient(to right, transparent 50%, white 50%);
+    background-image: linear-gradient(to right, transparent 50%, antiquewhite 50%);
     background-size: 200%;
   }
 
   100% {
-    background-image: linear-gradient(to right, transparent 50%, white 50%);
+    background-image: linear-gradient(to right, transparent 50%, antiquewhite 50%);
     background-size: 200%;
     color: black;
-    background-position: -100%;
+    background-position: -100%; 
     transition: color 1s, background-position 0.5s;
   }
 }
