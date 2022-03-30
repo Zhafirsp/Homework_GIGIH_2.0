@@ -1,5 +1,6 @@
 .playlist {
   float: left;
+  margin-left: 10%;
 }
 
 .card-body {
@@ -13,7 +14,7 @@
   border: 2px solid whitesmoke;
   box-shadow: 5px 5px 20px rgba(255, 255, 255, 1);
   animation: change-boxshadow 4s linear infinite alternate;
-  max-width: 500px;
+  max-width: 400px;
   margin-left: 35px;
   flex: auto;
   /* z-index: -500px; */
@@ -40,7 +41,17 @@
 }
 
 .btn {
-  border-radius: 10px;
+  /* border-radius: 10px; */
+  font-size: 15px;
+  /* width: 150px;
+  height: 40px;
+  margin: 10px; */
+  background-color: #1ed760;
+}
+
+.btn:hover {
+  background-color: #1bb14f;
+  /* box-shadow: 1px 1px 5px rgba(0, 0, 0, 1); */
 }
 
 @keyframes change-boxshadow {
