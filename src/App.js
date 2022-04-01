@@ -1,15 +1,14 @@
 import './App.css';
 
 import Jumbotron from './component/jumbotron';
-import Login from './component/spotifyplaylist/login';
-
-
+import Home from './component/spotifyplaylist/home';
 function App() {
+  
   return (
     <div className="App">
      
      {/* <Jumbotron/> */}
-    <Login />
+    <Home />
     </div>
     
   );

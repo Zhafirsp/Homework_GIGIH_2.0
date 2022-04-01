@@ -6,7 +6,7 @@ const SpotifyAPI = () => {
     CLIENT_ID: process.env.REACT_APP_CLIENT_ID,
     REDIRECT_URL: process.env.REACT_APP_REDIRECT_URL,
     SCOPE: "playlist-modify-private",
-    SPOTIFY_AUTHORIZE_ENDPOINT: process.env.REACT_APP_AUTHORIZE_URL,
+    SPOTIFY_AUTHORIZE: process.env.REACT_APP_AUTHORIZE_URL,
   }
 }
 

@@ -3,7 +3,7 @@ import Song from '../../assets/song/Bohemian Rhapsody.mp3'
 import TextHeader from '../header/textHeader'
 import Rain from '../rain';
 import Card from '../card';
-import { Playlist } from "../spotifyplaylist/home";
+import { Playlist } from "../spotifyplaylist/track";
 
 const Jumbotron = () => {
   return (
