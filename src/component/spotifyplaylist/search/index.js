@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import './index.css'
-import { SpotifyAPI } from "../auth/spotifyapi";
 
-function SearchBar({ accessToken, onSuccess, onClearSearch }) {
+// Url api for search music spotify
+const SPOTIFY_BASE_URL=  "https://api.spotify.com/v1";
+
+export default function SearchBar({ accessToken, onSuccess }) {
   const [text, setText] = useState("");
-  const spotify = {SpotifyAPI}
+
   const handleInput = (e) => {
     setText(e.target.value);
   };
@@ -21,7 +23,7 @@ function SearchBar({ accessToken, onSuccess, onClearSearch }) {
 
     try {
       const response = await fetch(
-        `${spotify.BASE_URL}/search?type=track&q=${text}`,
+        `${SPOTIFY_BASE_URL}/search?type=track&q=${text}`,
         requestOptions
       ).then((data) => data.json());
 
@@ -32,32 +34,24 @@ function SearchBar({ accessToken, onSuccess, onClearSearch }) {
     }
   };
 
-  const clearSearch = () => {
-    setText("");
-    onClearSearch();
-  };
-
   return (
-    <div className="search-wrapper">
+    <div className="search mt-3">
       <form className="form-search" onSubmit={handleSubmit}>
         <div className="form-group">
           <input
             type="text"
             name="query"
-            placeholder="Search..."
+            placeholder="   Search..."
             onChange={handleInput}
             required
             value={text}
           />
-          <input type="submit" className="btn btn-primary" value="Search" />
+          <button className="btn btn-dark btn-search">Search</button>
         </div>
       </form>
-      <button className="btn btn-text" onClick={clearSearch}>
-        Clear Search
-      </button>
     </div>
   );
-}
+} 
 
 // class Login extends Component {
 // constructor() {
@@ -174,5 +168,3 @@ function SearchBar({ accessToken, onSuccess, onClearSearch }) {
 //     );
 //   }
 // }
-
-export default SearchBar;

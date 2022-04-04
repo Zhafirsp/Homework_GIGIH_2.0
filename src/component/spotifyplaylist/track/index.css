@@ -14,8 +14,9 @@
   border: 2px solid whitesmoke;
   box-shadow: 5px 5px 20px rgba(255, 255, 255, 1);
   animation: change-boxshadow 4s linear infinite alternate;
-  max-width: 400px;
-  margin-left: 35px;
+  width: 400px;
+  height: 550px;
+  margin-left: 10px;
   flex: auto;
   /* z-index: -500px; */
 }
@@ -47,6 +48,7 @@
   height: 40px;
   margin: 10px; */
   background-color: #1ed760;
+  font-size: 16px;
 }
 
 .btn:hover {

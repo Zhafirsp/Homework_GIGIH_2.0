@@ -4,10 +4,31 @@
 
 input {
   max-width: 250px;
+  border-radius: 15px;
+}
+
+textarea {
+  max-width: 350px;
+  border-radius: 15px;
 }
 
 .btn-login {
   width: 200px;
   height: 50px;
   font-size: 18px;
+}
+
+label {
+  text-align: center;
+}
+
+.search {
+  text-align: center;
+}
+
+.btn-search {
+  width: auto;
+  height: 35px;
+  border-radius: 15px;
+  margin-left: 5px;
 }

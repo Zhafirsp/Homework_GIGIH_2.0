@@ -1,36 +1,33 @@
 import React, { useState } from "react";
+import './index.css'
 
-export default function Track({ url, title, artist, toggleSelect }) {
-  const [isSelected, setIsSelected] = useState(false);
+export default function Track({ url, title, artist, album, toggleSelect }) {
+  const [selected, setSelected] = useState(false);
 
   const handleSelect = () => {
-    setIsSelected(!isSelected);
+    setSelected(!selected);
     toggleSelect();
   };
 
   return (
-
-    <div className="card mb-3">
-      <div className="row g-0">
-        <div className="col-md-4">
-          <img src={url} className="img-fluid rounded-start" alt="..." />
-        </div>
-        <div className="col-md-8">
+    <div className="playlist">
+    <div className="row mb-3 mt-3 justify-content-center text-center">
+      <div className="col-md-12 mb-4 mt-4">
+        <div className="card border-light">
           <div className="card-body">
-            <h5 className="card-title">{title}</h5>
-            <p className="card-text">{artist}</p>
-            <button
-        className={`btn btn-select ${
-          isSelected ? "btn-primary" : "btn-secondary"
-        }`}
-        onClick={handleSelect}>
-        {isSelected ? "Deselect" : "Select"}
-      </button>
+            <img src={url} alt={title} width="300" height="300" className="img-fluid rounded-start"/>
+            <h4 className="card-title text-dark mt-3"><i className="bi bi-music-note"></i>{title}</h4>
+            <p className="card-text text-muted" id="song-title">{artist}</p>
+            <p className="garis-pembatas col-md-4 offset-md-3"></p>
+            <p className="card-text text-muted" id="song-album">{album}</p>
+                  <button className={`btn btn-select btn-lg text-white mb-3 ${selected ? "btn-dark" : "btn-secondary"}`} type="button" id="info" onClick={handleSelect}>
+                  {selected ? "Deselect" : "Select"} 
+                  </button>
+            <br></br>
           </div>
         </div>
       </div>
     </div>
-
-
+  </div>
   );
-}
+} 
