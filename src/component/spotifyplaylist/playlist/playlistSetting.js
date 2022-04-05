@@ -1,6 +1,5 @@
 import React from "react";
-
-const BASE_URL = "https://api.spotify.com/v1";
+import spotifyApi from "../utility/spotifyApi";
 
 export const searchTrack = async (query, accessToken) => {
   const requestOptions = {
@@ -11,7 +10,7 @@ export const searchTrack = async (query, accessToken) => {
   };
 
   const response = await fetch(
-    `${BASE_URL}/search?type=track&q=${query}`,
+    `${spotifyApi.SPOTIFY_BASE_URL}/search?type=track&q=${query}`,
     requestOptions
   ).then((data) => data.json());
 
@@ -27,7 +26,7 @@ export const getUserProfile = async (accessToken) => {
   };
 
   const response = await fetch(
-    `${BASE_URL}/me`,
+    `${spotifyApi.SPOTIFY_BASE_URL}/me`,
     requestOptions
   ).then((data) => data.json());
 
@@ -56,7 +55,7 @@ export const createPlaylist = async (
   };
 
   const response = await fetch(
-    `${BASE_URL}/users/${userId}/playlists`,
+    `${spotifyApi.SPOTIFY_BASE_URL}/users/${userId}/playlists`,
     requestOptions
   ).then((data) => data.json());
 
@@ -78,7 +77,7 @@ export const addTracksToPlaylist = async (accessToken, playlistId, uris) => {
   };
 
   const response = await fetch(
-    `${BASE_URL}/playlists/${playlistId}/tracks`,
+    `${spotifyApi.SPOTIFY_BASE_URL}/playlists/${playlistId}/tracks`,
     requestOptions
   ).then((data) => data.json());
 
