@@ -44,7 +44,7 @@ export default function FormPlaylist({ uris }) {
   };
 
   return (
-    <div className="form-playlist">
+    <div className="form-playlist text-center">
       <h3>Create Playlist</h3>
       <form className="form" onSubmit={handleSubmit}>
         <div className="form-group mb-3">
@@ -70,7 +70,7 @@ export default function FormPlaylist({ uris }) {
             required
           ></textarea>
         </div>
-        <button className="btn btn-dark" type="submit">
+        <button className="btn btn-submit btn-dark" type="submit">
           Submit
         </button>
       </form>
