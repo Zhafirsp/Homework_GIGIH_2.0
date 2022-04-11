@@ -1,20 +1,20 @@
-import React, { useState } from "react";
-import { useSelector } from "react-redux";
-import { addTracksToPlaylist, createPlaylist } from "./playlistSetting";
+import React, {useState} from 'react';
+import {useSelector} from 'react-redux';
+import {addTracksToPlaylist, createPlaylist} from '../utility/playlistSetting';
 
-export default function FormPlaylist({ uris }) {
+export default function FormPlaylist({uris}) {
   const [playlist, setPlaylist] = useState({
-    title: "",
-    description: "",
+    title: '',
+    description: '',
   });
-  
+
   const accessToken = useSelector((state) => state.auth.accessToken);
   const userId = useSelector((state) => state.auth.user.id);
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
+    const {name, value} = e.target;
 
-    setPlaylist({ ...playlist, [name]: value });
+    setPlaylist({...playlist, [name]: value});
   };
 
   const handleSubmit = async (e) => {
@@ -30,16 +30,16 @@ export default function FormPlaylist({ uris }) {
         await addTracksToPlaylist(accessToken, responsePlaylist.id, uris);
 
         setPlaylist({
-          title: "",
-          description: "",
+          title: '',
+          description: '',
         });
 
-        alert("Playlist created successfully!");
+        alert('Playlist created successfully!');
       } catch (e) {
         alert(e);
       }
     } else {
-      alert("Title must be at least 10 characters long.");
+      alert('Title must be at least 10 characters long.');
     }
   };
 

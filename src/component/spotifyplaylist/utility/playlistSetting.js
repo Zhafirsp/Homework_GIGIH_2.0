@@ -1,17 +1,16 @@
-import React from "react";
-import spotifyApi from "../utility/spotifyApi";
+import spotifyApi from './spotifyApi';
 
 export const searchTrack = async (query, accessToken) => {
   const requestOptions = {
     headers: {
-      Authorization: "Bearer " + accessToken,
-      "Content-Type": "application/json",
+      'Authorization': `Bearer ${accessToken}`,
+      'Content-Type': 'application/json',
     },
   };
 
   const response = await fetch(
-    `${spotifyApi.SPOTIFY_BASE_URL}/search?type=track&q=${query}`,
-    requestOptions
+      `${spotifyApi.SPOTIFY_BASE_URL}/search?type=track&q=${query}`,
+      requestOptions,
   ).then((data) => data.json());
 
   return response;
@@ -20,23 +19,23 @@ export const searchTrack = async (query, accessToken) => {
 export const getUserProfile = async (accessToken) => {
   const requestOptions = {
     headers: {
-      Authorization: "Bearer " + accessToken,
-      "Content-Type": "application/json",
+      'Authorization': `Bearer ${accessToken}`,
+      'Content-Type': 'application/json',
     },
   };
 
   const response = await fetch(
-    `${spotifyApi.SPOTIFY_BASE_URL}/me`,
-    requestOptions
+      `${spotifyApi.SPOTIFY_BASE_URL}/me`,
+      requestOptions,
   ).then((data) => data.json());
 
   return response;
 };
 
 export const createPlaylist = async (
-  accessToken,
-  userId,
-  { name, description }
+    accessToken,
+    userId,
+    {name, description},
 ) => {
   const data = JSON.stringify({
     name,
@@ -46,17 +45,17 @@ export const createPlaylist = async (
   });
 
   const requestOptions = {
-    method: "POST",
+    method: 'POST',
     body: data,
     headers: {
-      Authorization: "Bearer " + accessToken,
-      "Content-Type": "application/json",
+      'Authorization': `Bearer ${accessToken}`,
+      'Content-Type': 'application/json',
     },
   };
 
   const response = await fetch(
-    `${spotifyApi.SPOTIFY_BASE_URL}/users/${userId}/playlists`,
-    requestOptions
+      `${spotifyApi.SPOTIFY_BASE_URL}/users/${userId}/playlists`,
+      requestOptions,
   ).then((data) => data.json());
 
   return response;
@@ -68,17 +67,17 @@ export const addTracksToPlaylist = async (accessToken, playlistId, uris) => {
   });
 
   const requestOptions = {
-    method: "POST",
+    method: 'POST',
     body: data,
     headers: {
-      Authorization: "Bearer " + accessToken,
-      "Content-Type": "application/json",
+      'Authorization': `Bearer ${accessToken}`,
+      'Content-Type': 'application/json',
     },
   };
 
   const response = await fetch(
-    `${spotifyApi.SPOTIFY_BASE_URL}/playlists/${playlistId}/tracks`,
-    requestOptions
+      `${spotifyApi.SPOTIFY_BASE_URL}/playlists/${playlistId}/tracks`,
+      requestOptions,
   ).then((data) => data.json());
 
   return response;

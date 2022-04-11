@@ -1,5 +1,6 @@
-import { useDispatch } from "react-redux";
-import { logout } from "../utility/authslice";
+import React from 'react';
+import {useDispatch} from 'react-redux';
+import {logout} from '../utility/authslice';
 import './index.css';
 
 export default function Logout() {
@@ -10,10 +11,10 @@ export default function Logout() {
   };
 
   return (
-      <div className="logout-app text-center">
-        <button className="btn btn-logout text-white text-logout" onClick={handleLogout}>
+    <div className="logout-app text-center">
+      <button className="btn btn-logout text-white text-logout" onClick={handleLogout}>
           Logout
-        </button>
-      </div>
+      </button>
+    </div>
   );
 }

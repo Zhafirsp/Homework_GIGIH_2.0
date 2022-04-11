@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from "react";
-import Track from '../track/track'
-import SearchBar from "../search";
-import Navbar from "../logout";
-import FormPlaylist from "./formPlaylist";
+import React, {useEffect, useState} from 'react';
+import Track from '../track/track';
+import SearchBar from '../search';
+import Logout from '../logout';
+import FormPlaylist from './formPlaylist';
 
 export default function CreatePlaylist() {
   const [tracks, setTracks] = useState([]);
@@ -18,22 +18,21 @@ export default function CreatePlaylist() {
     }
   }, [selectedTrackURI]);
 
-  const filterSelectedTracks = () => {
-    return tracks.filter((track) => selectedTrackURI.includes(track.uri));
-  };
+  const filterSelectedTracks = () =>
+    tracks.filter((track) => selectedTrackURI.includes(track.uri));
 
   const handleSuccessSearch = (searchTracks) => {
     setSearch(true);
 
-    const selectedSearchTracks  = searchTracks.filter(
-      (data) => selectedTrackURI.includes(data.uri)
+    const selectedSearchTracks = searchTracks.filter(
+        (data) => selectedTrackURI.includes(data.uri),
     );
 
     setTracks([...new Set([...selectedSearchTracks, ...searchTracks])]);
   };
 
   const toggleSelect = (track) => {
-    const uri = track.uri;
+    const {uri} = track;
 
     if (selectedTrackURI.includes(uri)) {
       setSelectedTrackURI(selectedTrackURI.filter((item) => item !== uri));
@@ -47,12 +46,12 @@ export default function CreatePlaylist() {
   return (
     <div>
       <FormPlaylist
-          uris={selectedTrackURI}
+        uris={selectedTrackURI}
       />
-      <Navbar />
+      <Logout />
       <hr />
       <SearchBar
-          onSuccess={(tracks) => handleSuccessSearch(tracks)}
+        onSuccess={(tracks) => handleSuccessSearch(tracks)}
       />
       {tracks.length === 0 && <p className="not-found text-center">Song Not Found</p>}
 
@@ -70,5 +69,5 @@ export default function CreatePlaylist() {
         ))}
       </div>
     </div>
-  )
+  );
 }

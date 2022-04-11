@@ -1,10 +1,10 @@
-import React, { useState } from "react";
-import { useSelector } from "react-redux";
-import { searchTrack } from "../playlist/playlistSetting";
-import './index.css'
+import React, {useState} from 'react';
+import {useSelector} from 'react-redux';
+import {searchTrack} from '../utility/playlistSetting';
+import './index.css';
 
-export default function SearchBar({ onSuccess }) {
-  const [text, setText] = useState("");
+export default function SearchBar({onSuccess}) {
+  const [text, setText] = useState('');
   const accessToken = useSelector((state) => state.auth.accessToken);
 
   const handleInput = (e) => {
@@ -40,7 +40,7 @@ export default function SearchBar({ onSuccess }) {
       </form>
     </div>
   );
-} 
+}
 
 // class Login extends Component {
 // constructor() {
@@ -127,7 +127,7 @@ export default function SearchBar({ onSuccess }) {
 //             <button class="btn text-white" onClick={this.onClick} type="submit" value="submit">Logout</button>
 //           </div>
 //           {this.state.searchResult.map((track) => (
-            
+
 //             <Albums
 //               key={track.album.id}
 //               images={track.album.images[0].url}
@@ -149,7 +149,7 @@ export default function SearchBar({ onSuccess }) {
 //           </div>
 //       );
 
-    
+
 //     return (
 //       <div className="spotify-track">
 //         {isi}

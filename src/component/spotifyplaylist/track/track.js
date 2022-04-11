@@ -1,8 +1,8 @@
-import React, { useState } from "react";
-import './index.css'
+import React, { useState } from 'react';
+import './index.css';
 
-export default function Track({ url, title, artist, album, toggleSelect }) {
-  const [selected, setSelected] = useState(false);
+export default function Track({ url, title, artist, album, select, toggleSelect }) {
+  const [selected, setSelected] = useState(select);
 
   const handleSelect = () => {
     setSelected(!selected);
@@ -20,8 +20,8 @@ export default function Track({ url, title, artist, album, toggleSelect }) {
             <p className="card-text text-muted" id="song-title">{artist}</p>
             <p className="garis-pembatas col-md-4 offset-md-3"></p>
             <p className="card-text text-muted" id="song-album">{album}</p>
-                  <button className={`btn btn-select btn-lg text-white mb-3 ${selected ? "btn-dark" : "btn-secondary"}`} type="button" id="info" onClick={handleSelect}>
-                  {selected ? "Deselect" : "Select"} 
+                  <button className={`btn btn-select btn-lg text-white mb-3 ${selected ? 'btn-dark' : 'btn-secondary'}`} type="button" id="info" onClick={handleSelect}>
+                  {selected ? 'Deselect' : 'Select'} 
                   </button>
             <br></br>
           </div>
