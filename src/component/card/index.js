@@ -1,5 +1,5 @@
 import React from 'react';
-import './index.css';
+import './card.css';
 import Title from '../song/title/index.js';
 import Artists from '../song/artists/index.js';
 import Img from '../song/image/index.js';
@@ -27,11 +27,11 @@ const Card = () => {
     //     </div>
     <div className="row mb-3 mt-3 justify-content-center text-center">
       <div className="col-md-5 mb-4 mt-4">
-        <div className="card border-light">
+        <div className="card-card border-light">
 
           <Img />
 
-          <div className="card-body">
+          <div className="card-body-card">
 
             <Title />
             <Artists />

@@ -1,10 +1,9 @@
 import {useSelector} from 'react-redux';
 import {BrowserRouter as Router, Switch, Route, Redirect} from 'react-router-dom';
 import './App.css';
-// import Jumbotron from './component/jumbotron';
+import Jumbotron from './component/jumbotron';
 // import Home from './component/spotifyplaylist/home';
 import CreatePlaylist from './component/spotifyplaylist/playlist/createPlaylist';
-import Login from './component/spotifyplaylist/login';
 import React from 'react';
 
 function App() {
@@ -18,11 +17,10 @@ function App() {
             {authorized ? <CreatePlaylist /> : <Redirect to="/" />}
           </Route>
           <Route path="/">
-            <Login />
+            <Jumbotron/>
           </Route>
         </Switch>
       </Router>
-      {/* <Jumbotron/> */}
       {/* <Home /> */}
     </div>
 
