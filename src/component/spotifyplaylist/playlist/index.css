@@ -1,5 +1,19 @@
-.
+.form-control {
+  width: 250px;
+}
+
+.playlist-page {
+  margin-left: 15px;
+}
 
 .btn-submit {
-  margin-left: -25px;
+  width: 250px;
+}
+
+.create-playlist ,.title, .desc, .btn-submit {
+  margin-left: -538px;
+}
+
+.not-found {
+  margin-left: 20px;
 }

@@ -12,7 +12,7 @@ export default function Logout() {
 
   return (
     <div className="logout-app text-center">
-      <button className="btn btn-logout text-white text-logout" onClick={handleLogout}>
+      <button className="btn btn-logout text-logout btn-light" onClick={handleLogout}>
           Logout
       </button>
     </div>

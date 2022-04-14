@@ -44,16 +44,16 @@ export default function CreatePlaylist() {
   };
 
   return (
-    <div>
+    <div className='playlist-page'>
+      <Logout />
       <FormPlaylist
         uris={selectedTrackURI}
       />
-      <Logout />
       <hr />
       <SearchBar
         onSuccess={(tracks) => handleSuccessSearch(tracks)}
       />
-      {tracks.length === 0 && <p className="not-found text-center">Song Not Found</p>}
+      {tracks.length === 0 && <p className="not-found text-white text-center">Song Not Found</p>}
 
       <div className="track-list">
         {tracks.map((track) => (

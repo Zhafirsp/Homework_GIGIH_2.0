@@ -32,13 +32,8 @@
   margin: 0px 0 15px 0;
 }
 
-.garis-pembatas {
-  border-bottom: 1px solid grey;
-  width: 100%;
-}
-
-.btn {
-  border-radius: 10px;
+.details-btn {
+  border-radius: 15px;
 }
 
 @keyframes change-boxshadow {

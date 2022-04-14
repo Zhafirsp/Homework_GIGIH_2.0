@@ -25,17 +25,18 @@ export default function SearchBar({onSuccess}) {
 
   return (
     <div className="search mt-3">
-      <form className="form-search" onSubmit={handleSubmit}>
+      <form className="form-search col-md-8 offset-md-5" onSubmit={handleSubmit}>
         <div className="form-group">
           <input
             type="text"
+            className="form-control"
             name="query"
-            placeholder="   Search..."
+            placeholder="Search..."
             onChange={handleInput}
             required
             value={text}
           />
-          <button className="btn btn-dark btn-search">Search</button>
+          <button className="btn btn-light btn-search mb-3">Search</button>
         </div>
       </form>
     </div>
