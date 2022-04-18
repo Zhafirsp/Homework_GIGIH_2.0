@@ -1,42 +1,42 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import Track from '../track/track';
 import SearchBar from '../search';
 import Logout from '../logout';
 import FormPlaylist from './formPlaylist';
 
-export default function CreatePlaylist() {
-  const [tracks, setTracks] = useState([]);
-  const [selectedTrackURI, setSelectedTrackURI] = useState([]);
-  const [selectedTracks, setSelectedTracks] = useState([]);
-  const [search, setSearch] = useState(false);
+const CreatePlaylist: React.FC = () => {
+  const [tracks, setTracks] = useState<any[]>([]);
+  const [selectedTrackURI, setSelectedTrackURI] = useState<string[]>([]);
+  const [selectedTracks, setSelectedTracks] = useState<any[]>([]);
+  const [search, setSearch] = useState<boolean>(false);
 
   useEffect(() => {
     if (!search) {
-      const selectedTracks = filterSelectedTracks();
+      const selectedTracks: any[] = filterSelectedTracks();
 
       setTracks(selectedTracks);
     }
   }, [selectedTrackURI]);
 
-  const filterSelectedTracks = () =>
+  const filterSelectedTracks: () => any[] = () =>
     tracks.filter((track) => selectedTrackURI.includes(track.uri));
 
-  const handleSuccessSearch = (searchTracks) => {
+  const handleSuccessSearch: (searchTracks: any[]) => void = (searchTracks) => {
     setSearch(true);
 
     const selectedSearchTracks = searchTracks.filter(
-        (data) => selectedTrackURI.includes(data.uri),
+      (data: any) => selectedTrackURI.includes(data.uri),
     );
 
     setTracks([...new Set([...selectedSearchTracks, ...searchTracks])]);
   };
 
-  const toggleSelect = (track) => {
-    const {uri} = track;
+  const toggleSelect: (track: any) => void = (track) => {
+    const { uri } = track;
 
     if (selectedTrackURI.includes(uri)) {
-      setSelectedTrackURI(selectedTrackURI.filter((item) => item !== uri));
-      setSelectedTracks(selectedTrackURI.filter((item) => item.uri !== uri));
+      setSelectedTrackURI(selectedTrackURI.filter((item: any) => item !== uri));
+      setSelectedTracks(selectedTracks.filter((item: any) => item.uri !== uri));
     } else {
       setSelectedTrackURI([...selectedTrackURI, uri]);
       setSelectedTracks([...selectedTracks, track]);
@@ -49,7 +49,7 @@ export default function CreatePlaylist() {
       <FormPlaylist
         uris={selectedTrackURI}
       />
-      <hr />
+      <hr className='pembatas-form' />
       <SearchBar
         onSuccess={(tracks) => handleSuccessSearch(tracks)}
       />
@@ -70,4 +70,6 @@ export default function CreatePlaylist() {
       </div>
     </div>
   );
-}
+};
+
+export default CreatePlaylist;

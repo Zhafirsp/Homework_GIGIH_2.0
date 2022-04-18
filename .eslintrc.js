@@ -28,7 +28,7 @@ module.exports = {
     "rules": {
         "semi": ["error", "always"],
         "quotes": ["error", "single"],
-        "react/prop-types": 0,
+        "no-unused-vars": "off",
         "no-undef": "error"
     }
 }

@@ -1,14 +1,10 @@
-input {
-  width: 250px;
-}
-
-textarea {
-  max-width: 350px;
-}
-
 .btn-search {
   width: auto;
   height: 35px;
   margin-top: 10px;
   width: 250px;
+}
+
+.search {
+  margin-left: 41%;
 }

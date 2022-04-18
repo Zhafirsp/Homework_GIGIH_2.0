@@ -2,7 +2,7 @@
   width: 250px;
 }
 
-.playlist-page {
+.logo {
   margin-left: 15px;
 }
 
@@ -11,9 +11,17 @@
 }
 
 .create-playlist ,.title, .desc, .btn-submit {
-  margin-left: -538px;
+  margin-left: -553px;
+}
+
+.form-playlist {
+  margin-left: 41%;
 }
 
 .not-found {
   margin-left: 20px;
+}
+
+.pembatas-form{
+  color: whitesmoke;
 }

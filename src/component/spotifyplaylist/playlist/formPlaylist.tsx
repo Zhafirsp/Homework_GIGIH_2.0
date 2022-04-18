@@ -1,24 +1,35 @@
-import React, {useState} from 'react';
-import {useSelector} from 'react-redux';
-import {addTracksToPlaylist, createPlaylist} from '../utility/playlistSetting';
+import React, { useState } from 'react';
+import { useSelector } from 'react-redux';
+import { addTracksToPlaylist, createPlaylist } from '../utility/playlistSetting';
 import './index.css';
+import { TRootState } from 'store';
 
-export default function FormPlaylist({uris}) {
-  const [playlist, setPlaylist] = useState({
+interface IProps {
+  uris: string[];
+}
+
+interface IFormState {
+  title: string;
+  description: string;
+}
+
+const FormPlaylist: React.FC<IProps> = ({ uris }) => {
+  const [playlist, setPlaylist] = useState<IFormState>({
     title: '',
     description: '',
   });
 
-  const accessToken = useSelector((state) => state.auth.accessToken);
-  const userId = useSelector((state) => state.auth.user.id);
+  const accessToken = useSelector((state: TRootState) => state.auth.accessToken);
+  const userId = useSelector((state: TRootState) => state.auth.user.id);
 
-  const handleChange = (e) => {
-    const {name, value} = e.target;
+  const handleChange = (e: React.ChangeEvent) => {
+    const target = e.target as HTMLTextAreaElement;
+    const { name, value } = target;
 
-    setPlaylist({...playlist, [name]: value});
+    setPlaylist({ ...playlist, [name]: value });
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
     if (playlist.title.length > 10) {
@@ -40,20 +51,20 @@ export default function FormPlaylist({uris}) {
         alert(e);
       }
     } else {
-      alert('Title must be at least 10 characters long.');
+      alert('Title must be 10 characters long or more.');
     }
   };
 
   return (
     <div>
-      <h2 className='fw-bolder text-white mt-2'>SPORTFY</h2>
-        <br/>
-        <div className="form-playlist mt-3 offset-5 text-center">
+      <h2 className='fw-bolder text-white mt-2 logo'>SPORTFY</h2>
+      <br />
+      <div className="form-playlist mt-3 text-center">
         <h3 className='create-playlist text-white'>Create Playlist</h3>
         <form className="form" onSubmit={handleSubmit}>
           <div className="form-group mb-3 mt-3">
             <label className="title fs-5 text-white mb-1">Title</label>
-            <br/>
+            <br />
             <input
               type="text"
               className="form-control"
@@ -67,7 +78,7 @@ export default function FormPlaylist({uris}) {
           </div>
           <div className="form-group mb-3">
             <label className="desc fs-5 text-white mb-1">Description</label>
-            <br/>
+            <br />
             <textarea
               id="desc"
               className="form-control"
@@ -85,4 +96,6 @@ export default function FormPlaylist({uris}) {
       </div>
     </div>
   );
-}
+};
+
+export default FormPlaylist;

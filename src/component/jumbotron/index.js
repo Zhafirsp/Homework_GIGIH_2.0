@@ -13,13 +13,7 @@ const Jumbotron = () => {
       <section className="jumbotron">
         <div className="container pt-3">
 
-          <TextHeader
-            header= {{
-              title: 'My Playlist',
-              type: 'Song of the Year',
-              text: 'Music is Magic',
-            }}
-          />
+          <TextHeader/>
           <hr/>
           <Card />
 
