@@ -1,13 +1,14 @@
-import {useSelector} from 'react-redux';
-import {BrowserRouter as Router, Switch, Route, Redirect} from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
 import './App.css';
 import Jumbotron from './component/jumbotron';
 // import Home from './component/spotifyplaylist/home';
 import CreatePlaylist from './component/spotifyplaylist/playlist/createPlaylist';
 import React from 'react';
+import { RootState } from './store';
 
 function App() {
-  const authorized = useSelector((state) => state.auth.authorized);
+  const authorized: boolean = useSelector((state: RootState) => state.auth.authorized);
 
   return (
     <div className="App">
@@ -17,7 +18,7 @@ function App() {
             {authorized ? <CreatePlaylist /> : <Redirect to="/" />}
           </Route>
           <Route path="/">
-            <Jumbotron/>
+            <Jumbotron />
           </Route>
         </Switch>
       </Router>

@@ -3,16 +3,17 @@ import Track from '../track/track';
 import SearchBar from '../search';
 import Logout from '../logout';
 import FormPlaylist from './formPlaylist';
+import { Track as ITrack } from '../types/spotifyType';
 
 const CreatePlaylist: React.FC = () => {
-  const [tracks, setTracks] = useState<any[]>([]);
+  const [tracks, setTracks] = useState<ITrack[]>([]);
   const [selectedTrackURI, setSelectedTrackURI] = useState<string[]>([]);
-  const [selectedTracks, setSelectedTracks] = useState<any[]>([]);
+  const [selectedTracks, setSelectedTracks] = useState<ITrack[]>([]);
   const [search, setSearch] = useState<boolean>(false);
 
   useEffect(() => {
     if (!search) {
-      const selectedTracks: any[] = filterSelectedTracks();
+      const selectedTracks: ITrack[] = filterSelectedTracks();
 
       setTracks(selectedTracks);
     }
@@ -21,7 +22,7 @@ const CreatePlaylist: React.FC = () => {
   const filterSelectedTracks: () => any[] = () =>
     tracks.filter((track) => selectedTrackURI.includes(track.uri));
 
-  const handleSuccessSearch: (searchTracks: any[]) => void = (searchTracks) => {
+  const handleSuccessSearch: (searchTracks: ITrack[]) => void = (searchTracks) => {
     setSearch(true);
 
     const selectedSearchTracks = searchTracks.filter(
@@ -31,12 +32,12 @@ const CreatePlaylist: React.FC = () => {
     setTracks([...new Set([...selectedSearchTracks, ...searchTracks])]);
   };
 
-  const toggleSelect: (track: any) => void = (track) => {
+  const toggleSelect: (track: ITrack) => void = (track) => {
     const { uri } = track;
 
     if (selectedTrackURI.includes(uri)) {
-      setSelectedTrackURI(selectedTrackURI.filter((item: any) => item !== uri));
-      setSelectedTracks(selectedTracks.filter((item: any) => item.uri !== uri));
+      setSelectedTrackURI(selectedTrackURI.filter((item: string) => item !== uri));
+      setSelectedTracks(selectedTracks.filter((item: ITrack) => item.uri !== uri));
     } else {
       setSelectedTrackURI([...selectedTrackURI, uri]);
       setSelectedTracks([...selectedTracks, track]);
@@ -53,7 +54,7 @@ const CreatePlaylist: React.FC = () => {
       <SearchBar
         onSuccess={(tracks) => handleSuccessSearch(tracks)}
       />
-      {tracks.length === 0 && <p className="not-found text-white text-center">Song Not Found</p>}
+      {tracks.length === 0 && <p className="not-found text-center text-white">Song Not Found</p>}
 
       <div className="track-list">
         {tracks.map((track) => (

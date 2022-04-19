@@ -35,7 +35,7 @@ const Card = () => {
 
             <Title />
             <Artists />
-            <p className="garis-pembatas"></p>
+            <hr className='garis-pembatas-card'/>
             <Album />
 
             <DetailsBtn />

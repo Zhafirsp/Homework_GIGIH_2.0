@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
-import { useSelector } from 'react-redux';
 import { addTracksToPlaylist, createPlaylist } from '../utility/playlistSetting';
 import './index.css';
-import { TRootState } from 'store';
+import { RootState, useAppSelector } from '../../../store';
 
 interface IProps {
   uris: string[];
@@ -19,8 +18,8 @@ const FormPlaylist: React.FC<IProps> = ({ uris }) => {
     description: '',
   });
 
-  const accessToken = useSelector((state: TRootState) => state.auth.accessToken);
-  const userId = useSelector((state: TRootState) => state.auth.user.id);
+  const accessToken: string = useAppSelector((state: RootState) => state.auth.accessToken);
+  const userId: string | undefined = useAppSelector((state: RootState) => state.auth.user?.id);
 
   const handleChange = (e: React.ChangeEvent) => {
     const target = e.target as HTMLTextAreaElement;
@@ -59,7 +58,7 @@ const FormPlaylist: React.FC<IProps> = ({ uris }) => {
     <div>
       <h2 className='fw-bolder text-white mt-2 logo'>SPORTFY</h2>
       <br />
-      <div className="form-playlist mt-3 text-center">
+      <div className="form-playlist mt-3">
         <h3 className='create-playlist text-white'>Create Playlist</h3>
         <form className="form" onSubmit={handleSubmit}>
           <div className="form-group mb-3 mt-3">
@@ -73,6 +72,7 @@ const FormPlaylist: React.FC<IProps> = ({ uris }) => {
               id="title"
               value={playlist.title}
               onChange={handleChange}
+              aria-label="input-title"
               required
             />
           </div>
@@ -86,11 +86,12 @@ const FormPlaylist: React.FC<IProps> = ({ uris }) => {
               placeholder="Playlist description..."
               value={playlist.description}
               onChange={handleChange}
+              aria-label="input-description"
               required
             ></textarea>
           </div>
           <button className="btn btn-submit btn-light" type="submit">
-            Submit
+            Create
           </button>
         </form>
       </div>

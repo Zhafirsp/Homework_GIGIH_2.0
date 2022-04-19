@@ -1,5 +1,8 @@
 .form-control {
   width: 250px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .logo {
@@ -10,18 +13,10 @@
   width: 250px;
 }
 
-.create-playlist ,.title, .desc, .btn-submit {
-  margin-left: -553px;
-}
-
-.form-playlist {
-  margin-left: 41%;
-}
-
-.not-found {
-  margin-left: 20px;
-}
-
-.pembatas-form{
+.pembatas-form {
   color: whitesmoke;
+}
+
+.form-playlist{
+  text-align: center;
 }

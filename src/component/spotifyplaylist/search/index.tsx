@@ -1,16 +1,16 @@
 import React, { useState } from 'react';
-import { useSelector } from 'react-redux';
 import { searchTrack } from '../utility/playlistSetting';
-import { TRootState } from 'store';
+import { RootState, useAppSelector } from '../../../store';
+import { Track as ITrack } from '../types/spotifyType';
 import './index.css';
 
 interface IProps {
-  onSuccess: (tracks: any[]) => void;
+  onSuccess: (tracks: ITrack[]) => void;
 }
 
 const SearchBar: React.FC<IProps> = ({ onSuccess }) => {
   const [text, setText] = useState<string>('');
-  const accessToken: string = useSelector((state: TRootState) => state.auth.accessToken);
+  const accessToken: string = useAppSelector((state: RootState) => state.auth.accessToken);
 
   const handleInput = (e: React.ChangeEvent) => {
     const target = e.target as HTMLTextAreaElement;
@@ -38,11 +38,12 @@ const SearchBar: React.FC<IProps> = ({ onSuccess }) => {
             className="form-control"
             name="query"
             placeholder="Search..."
+            aria-label="search-input"
             onChange={handleInput}
             required
             value={text}
           />
-          <button className="btn btn-light btn-search mb-3">Search</button>
+          <button aria-label="search-button" className="btn btn-light btn-search mb-3">Search</button>
         </div>
       </form>
     </div>

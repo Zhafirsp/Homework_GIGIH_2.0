@@ -1,10 +1,10 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
 import { logout } from '../utility/authslice';
 import './index.css';
+import { useAppDispatch } from '../../../store';
 
 const Logout: React.FC = () => {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   const handleLogout: () => void = () => {
     dispatch(logout());

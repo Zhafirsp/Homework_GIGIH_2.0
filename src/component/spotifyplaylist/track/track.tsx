@@ -20,19 +20,25 @@ const Track: React.FC<IProps> = ({ url, title, artist, album, select, toggleSele
 
   return (
     <div className="playlist-track">
-      <div className="row mb-3 mt-3 justify-content-center text-center">
-        <div className="col-md-12 mb-4 mt-4">
+      <div className="row mb-3 mt-3 text-center">
+        <div className="row g-0">
           <div className="card-track border-light">
-            <div className="card-body-track">
-              <img src={url} alt={title} width="300" height="300" className="card-img-top img-fluid" />
-              <h4 className="card-title text-dark mt-3"><i className="bi bi-music-note"></i>{title}</h4>
-              <p className="card-text text-muted" id="song-title">{artist}</p>
-              <p className="garis-pembatas col-md-4 offset-md-3"></p>
-              <p className="card-text text-muted btn-track" id="song-album">{album}</p>
-              <button className={`btn btn-select btn-lg text-white mb-3 ${selected ? 'btn-secondary' : 'btn-dark'}`} type="button" id="info" onClick={handleSelect}>
-                {selected ? 'Deselect' : 'Select'}
-              </button>
-              <br></br>
+            <div className="col-md-12">
+              <img src={url} alt={title} aria-label="image-track" className="card-img-top-track img-fluid" />
+            </div>
+            <div className='row'>
+              <div className="col-md-12">
+                <div className="card-body-track">
+                  <h4 aria-label="title-track" className="card-title text-dark"><i className="bi bi-music-note"></i>{title}</h4>
+                  <p aria-label="artist-track" className="card-text text-muted" id="song-title">{artist}</p>
+                  <p className="garis-pembatas col-md-4 offset-md-3"></p>
+                  <p aria-label="album-track" className="card-text text-muted btn-track" id="song-album">{album}</p>
+                  <button aria-label="button-track" className={`btn btn-select btn-lg text-white mb-3 ${selected ? 'btn-secondary' : 'btn-dark'}`} type="button" id="info" onClick={handleSelect}>
+                    {selected ? 'Deselect' : 'Select'}
+                  </button>
+                  <br></br>
+                </div>
+              </div>
             </div>
           </div>
         </div>
