@@ -1,12 +1,12 @@
-import React from "react";
-import { render, screen, cleanup } from "@testing-library/react";
-import store from "store";
-import { Provider } from "react-redux";
-import userEvent from "@testing-library/user-event";
-import CreatePlaylist from "./createPlaylist";
+import React from 'react';
+import { render, screen, cleanup } from '@testing-library/react';
+import store from '../../../store';
+import { Provider } from 'react-redux';
+import userEvent from '@testing-library/user-event';
+import CreatePlaylist from './createPlaylist';
 import { rest } from 'msw';
 import { setupServer } from 'msw/node';
-import spotifyApi from "../utility/spotifyApi";
+import spotifyApi from '../utility/spotifyApi';
 
 export const server = setupServer(
   rest.get(`${spotifyApi.SPOTIFY_BASE_URL}/search`, (_req, res, ctx) => {

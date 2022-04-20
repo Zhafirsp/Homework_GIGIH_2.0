@@ -1,9 +1,9 @@
-import React from "react";
-import { render, screen, cleanup } from "@testing-library/react";
-import store from "store";
-import { Provider } from "react-redux";
-import userEvent from "@testing-library/user-event";
-import SearchBar from ".";
+import React from 'react';
+import { render, screen, cleanup } from '@testing-library/react';
+import store from '../../../store';
+import { Provider } from 'react-redux';
+import userEvent from '@testing-library/user-event';
+import SearchBar from '.';
 
 const setup = () => render (
   <Provider store={store}>
@@ -11,7 +11,7 @@ const setup = () => render (
   </Provider>
 );
 
-describe('Search components  should be render', () => {
+describe('Search components should be render', () => {
   beforeEach(setup);
   afterEach(cleanup);
 

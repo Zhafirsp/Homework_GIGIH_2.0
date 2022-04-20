@@ -1,9 +1,9 @@
-import React from "react";
-import { render, screen, cleanup } from "@testing-library/react";
-import store from "store";
-import { Provider } from "react-redux";
-import userEvent from "@testing-library/user-event";
-import FormPlaylist from "./formPlaylist";
+import React from 'react';
+import { render, screen, cleanup } from '@testing-library/react';
+import store from '../../../store';
+import { Provider } from 'react-redux';
+import userEvent from '@testing-library/user-event';
+import FormPlaylist from './formPlaylist';
 
 const setup = () => render (
   <Provider store={store}>
