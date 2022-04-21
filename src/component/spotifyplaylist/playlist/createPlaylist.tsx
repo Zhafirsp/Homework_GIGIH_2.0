@@ -46,28 +46,32 @@ const CreatePlaylist: React.FC = () => {
 
   return (
     <div className='playlist-page'>
-      <Logout />
-      <FormPlaylist
-        uris={selectedTrackURI}
-      />
-      <hr className='pembatas-form' />
-      <SearchBar
-        onSuccess={(tracks) => handleSuccessSearch(tracks)}
-      />
-      {tracks.length === 0 && <p className="not-found text-center text-white">Song Not Found</p>}
+      <div className='form-page bg-secondary bg-opacity-10'>
+        <Logout />
+        <FormPlaylist
+          uris={selectedTrackURI}
+        />
+        <hr className='pembatas-form' />
+      </div>
+      <div className='search-page'>
+        <SearchBar
+          onSuccess={(tracks) => handleSuccessSearch(tracks)}
+        />
+        {tracks.length === 0 && <p className="not-found text-center text-white">Song Not Found</p>}
 
-      <div className="track-list">
-        {tracks.map((track) => (
-          <Track
-            key={track.id}
-            url={track.album.images[0].url}
-            title={track.name}
-            artist={track.artists[0].name}
-            album={track.album.name}
-            toggleSelect={() => toggleSelect(track)}
-            select={selectedTrackURI.includes(track.uri)}
-          />
-        ))}
+        <div className="track-list">
+          {tracks.map((track) => (
+            <Track
+              key={track.id}
+              url={track.album.images[0].url}
+              title={track.name}
+              artist={track.artists[0].name}
+              album={track.album.name}
+              toggleSelect={() => toggleSelect(track)}
+              select={selectedTrackURI.includes(track.uri)}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );

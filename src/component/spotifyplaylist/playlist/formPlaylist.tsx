@@ -90,7 +90,7 @@ const FormPlaylist: React.FC<IProps> = ({ uris }) => {
               required
             ></textarea>
           </div>
-          <button className="btn btn-submit btn-light" type="submit">
+          <button className="btn btn-submit btn-outline-success" type="submit">
             Create
           </button>
         </form>

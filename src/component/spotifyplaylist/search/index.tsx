@@ -43,7 +43,7 @@ const SearchBar: React.FC<IProps> = ({ onSuccess }) => {
             required
             value={text}
           />
-          <button aria-label="search-button" className="btn btn-light btn-search mb-3">Search</button>
+          <button aria-label="search-button" className="btn btn-outline-success btn-search mb-3">Search</button>
         </div>
       </form>
     </div>

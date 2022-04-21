@@ -12,7 +12,7 @@ const Logout: React.FC = () => {
 
   return (
     <div className="logout-app text-center">
-      <button className="btn btn-logout text-logout btn-light" onClick={handleLogout}>
+      <button className="btn btn-logout text-logout btn-outline-success" onClick={handleLogout}>
         Logout
       </button>
     </div>

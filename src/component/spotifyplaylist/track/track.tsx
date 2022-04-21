@@ -33,7 +33,7 @@ const Track: React.FC<IProps> = ({ url, title, artist, album, select, toggleSele
                   <p aria-label="artist-track" className="card-text text-muted" id="song-title">{artist}</p>
                   <p className="garis-pembatas col-md-4 offset-md-3"></p>
                   <p aria-label="album-track" className="card-text text-muted btn-track" id="song-album">{album}</p>
-                  <button aria-label="button-track" className={`btn btn-select btn-lg text-white mb-3 ${selected ? 'btn-secondary' : 'btn-dark'}`} type="button" id="info" onClick={handleSelect}>
+                  <button aria-label="button-track" className={`btn btn-select btn-lg text-light mb-3 ${selected ? 'btn-secondary' : 'btn-success'}`} type="button" id="info" onClick={handleSelect}>
                     {selected ? 'Deselect' : 'Select'}
                   </button>
                   <br></br>
