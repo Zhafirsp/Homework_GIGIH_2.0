@@ -58,15 +58,6 @@ describe('Create playlist should be render', () => {
     });
     afterAll(() => server.close());
   
-    it('Should render tracks after search', async () => {
-      const buttonSearch = screen.getByLabelText('search-button');
-  
-      userEvent.click(buttonSearch);
-  
-      await screen.findByText('Track Title');
-      expect(screen.getByText('Track Title')).toBeInTheDocument();
-    });
-  
     it('Should render track items after search', async () => {
       const searchInput = screen.getByLabelText('search-input');
       const buttonSearch = screen.getByLabelText('search-button');
@@ -80,12 +71,14 @@ describe('Create playlist should be render', () => {
       const titleTrack = screen.getByLabelText('title-track');
       const artistTrack = screen.getByLabelText('artist-track');
       const albumTrack = screen.getByLabelText('album-track');
+      const duration = screen.getByLabelText('duration-track');
       const btnTrack = screen.getByLabelText('button-track');
   
       expect(imageTrack).toBeInTheDocument();
       expect(titleTrack).toBeInTheDocument();
       expect(artistTrack).toBeInTheDocument();
       expect(albumTrack).toBeInTheDocument();
+      expect(duration).toBeInTheDocument();
       expect(btnTrack).toBeInTheDocument();
     });
   });

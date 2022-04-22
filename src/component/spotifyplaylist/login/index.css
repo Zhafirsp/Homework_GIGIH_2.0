@@ -5,10 +5,12 @@
   margin-top: 15px;
   border-radius: 15px;
   padding-top: 10px;
+  background-color: transparent;
 }
 
-.btn:hover{ 
-  box-shadow: 1px 1px 5px rgb(9, 189, 69);
+.btn-login:hover{
+  background-color: rgb(27, 144, 58);
+  box-shadow: 1px 1px 5px rgb(30, 215, 96);
 }
 
 .bi-spotify {

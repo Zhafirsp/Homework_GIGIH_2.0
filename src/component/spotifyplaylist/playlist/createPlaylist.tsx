@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import Track from '../track/track';
 import SearchBar from '../search';
-import Logout from '../logout';
+import Navbar from '../NavBar';
 import FormPlaylist from './formPlaylist';
 import { Track as ITrack } from '../types/spotifyType';
+import { convertMsToHMS } from '../utility/convertDuration';
+import Rain from '../../dashboard/rain';
 
 const CreatePlaylist: React.FC = () => {
   const [tracks, setTracks] = useState<ITrack[]>([]);
@@ -46,11 +48,12 @@ const CreatePlaylist: React.FC = () => {
 
   return (
     <div className='playlist-page'>
+      <Navbar />
       <div className='form-page bg-secondary bg-opacity-10'>
-        <Logout />
         <FormPlaylist
           uris={selectedTrackURI}
         />
+        <Rain />
         <hr className='pembatas-form' />
       </div>
       <div className='search-page'>
@@ -67,6 +70,7 @@ const CreatePlaylist: React.FC = () => {
               title={track.name}
               artist={track.artists[0].name}
               album={track.album.name}
+              duration={convertMsToHMS(track.duration_ms)}
               toggleSelect={() => toggleSelect(track)}
               select={selectedTrackURI.includes(track.uri)}
             />

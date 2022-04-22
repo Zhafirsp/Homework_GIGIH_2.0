@@ -31,7 +31,7 @@ const Card = () => {
 
           <Img />
 
-          <div className="card-body-card">
+          <div className="card-body-card mt-3">
 
             <Title />
             <Artists />

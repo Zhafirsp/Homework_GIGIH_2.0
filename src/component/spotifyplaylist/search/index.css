@@ -1,13 +1,11 @@
 .btn-search {
-  width: auto;
-  height: 35px;
-  margin-top: 10px;
-  width: 250px;
+  height: 40px;
+  width: 40px;
+  padding-left: 8px;
+  border-radius: 50px;
 }
 
 .form-search{
-  text-align: center;
-  display: block;
-  margin-left: auto;
+  margin-left: 450px;
   margin-right: auto;
 }

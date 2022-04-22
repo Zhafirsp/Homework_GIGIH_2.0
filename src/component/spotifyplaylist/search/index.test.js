@@ -17,7 +17,7 @@ describe('Search components should be render', () => {
 
   it('Success render search components', () => {
     expect(screen.getByLabelText('search-input')).toBeInTheDocument();
-    expect(screen.getByText('Search')).toBeInTheDocument();
+    expect(screen.getByLabelText('search-button')).toBeInTheDocument();
   });
 
   it('Search input value should be same as user typing', () => {

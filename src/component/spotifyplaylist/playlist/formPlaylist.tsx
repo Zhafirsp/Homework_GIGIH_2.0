@@ -56,9 +56,7 @@ const FormPlaylist: React.FC<IProps> = ({ uris }) => {
 
   return (
     <div>
-      <h2 className='fw-bolder text-white mt-2 logo'>SPORTFY</h2>
-      <br />
-      <div className="form-playlist mt-3">
+      <div className="form-playlist">
         <h3 className='create-playlist text-white'>Create Playlist</h3>
         <form className="form" onSubmit={handleSubmit}>
           <div className="form-group mb-3 mt-3">

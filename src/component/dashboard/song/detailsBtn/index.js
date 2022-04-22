@@ -3,7 +3,7 @@ import Data from '../single-sample.js';
 
 const DetailsBtn = () => {
   return (
-    <div>
+    <div className='mt-3'>
       <a href={Data.uri}>
         <button className="btn details-btn btn-dark btn-lg mb-3" type="button" id="info">
             Select

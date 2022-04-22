@@ -1,10 +1,10 @@
 import React from 'react';
-import Song from '../../assets/song/Bohemian Rhapsody.mp3';
+import Song from '../../../assets/song/Bohemian Rhapsody.mp3';
 import TextHeader from '../header/textHeader';
 import Rain from '../rain';
 import Card from '../card';
 // import {Playlist} from '../spotifyplaylist/track/index';
-import Login from '../spotifyplaylist/login';
+import Login from '../../spotifyplaylist/login';
 import '../card/card.css';
 
 const Jumbotron = () => {

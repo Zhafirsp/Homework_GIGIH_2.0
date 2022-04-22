@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux';
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
 import './App.css';
-import Jumbotron from './component/jumbotron';
+import Jumbotron from './component/dashboard/jumbotron';
 // import Home from './component/spotifyplaylist/home';
 import CreatePlaylist from './component/spotifyplaylist/playlist/createPlaylist';
 import React from 'react';
